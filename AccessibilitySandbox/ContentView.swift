@@ -24,6 +24,8 @@ struct ContentView: View {
         "Fireworks",
     ]
     
+    @State private var value = 10
+    
     var body: some View {
         
         VStack {
@@ -49,6 +51,35 @@ struct ContentView: View {
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel(Text("Your score is 1000"))
+            
+            Spacer()
+            
+            VStack {
+                Text("Total Points: \(value)")
+                
+                HStack {
+                    Button("Increment") {
+                        value += 1
+                    }
+                    
+                    Button("Decrement") {
+                        value -= 1
+                    }
+                }
+                .accessibilityElement()
+                .accessibilityLabel("Value")
+                .accessibilityValue(String(value))
+                .accessibilityAdjustableAction { direction in
+                switch direction {
+                case .increment:
+                        value += 1
+                    case .decrement:
+                        value -= 1
+                    default:
+                        print("Not supported")
+                    }
+                }
+            }
         }
         
     }
