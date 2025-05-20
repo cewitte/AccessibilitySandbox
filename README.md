@@ -39,7 +39,7 @@ Source URL: [Hiding and grouping accessibility data](https://www.hackingwithswif
 >- Hiding views from the accessibility system.
 >- Grouping several views as one.
 
-### Hiding and grouping accessibility data
+### Reading the value of controls
 
 Source URL: [Reading the value of controls](https://www.hackingwithswift.com/books/ios-swiftui/reading-the-value-of-controls)
 
@@ -77,6 +77,26 @@ VStack {
 ```
 
 >That lets users select the whole `VStack` to have “Value: 10” read out, but then they can swipe up or down to manipulate the value and have just the numbers read out – it’s a much more natural way of working.
+
+### Handling voice input in SwiftUI
+
+Source URL: [Handling voice input in SwiftUI](https://www.hackingwithswift.com/books/ios-swiftui/handling-voice-input-in-swiftui)
+
+>Once you've made sure your app works well with Voiceover, a great next step is to make sure it handles voice input too – that you work well with Apple's Voice Control technology, which lets users control your app by speaking to it.
+
+>The `accessibilityInputLabels()` modifier accepts an array of strings that can be attached to our button, so the user can trigger it in a variety of ways. So, to trigger the button with three different phrases we'd use this:
+
+```swift
+Button("John Fitzgerald Kennedy") {
+    print("Button tapped")
+}
+.accessibilityInputLabels(["John Fitzgerald Kennedy", "Kennedy", "JFK"])
+```
+>The goal is to help the user activate your controls using whatever seems natural to them – you can provide as many strings as you want, and iOS will listen for all of them.
+
+### Final notes
+
+The final result of my app is chaotic. 
 
 ## Acknowledgments
 

@@ -80,6 +80,21 @@ struct ContentView: View {
                     }
                 }
             }
+            
+            Spacer()
+            
+            VStack {
+                Button("John Fitzgerald Kennedy") {
+                    print("Button tapped")
+                }
+                .padding(12)
+                .background(.red)
+                .foregroundStyle(.white)
+                .clipShape(.rect)
+                .cornerRadius(25)
+                .accessibilityInputLabels(["John Fitzgerald Kennedy", "Kennedy", "JFK"])
+                
+            }
         }
         
     }
